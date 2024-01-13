@@ -1,9 +1,35 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# Check and create a church campaign
+unless Campaign.exists?(category: :church)
+  Campaign.create(
+    name: "Holy Guacamole Fundraiser",
+    category: "church",
+    description: "Join our quest to make the world's largest guacamole dish! Proceeds go towards our church's new avocado-themed chapel."
+  )
+end
+
+# Check and create a medical campaign
+unless Campaign.exists?(category: :medical)
+  Campaign.create(
+    name: "Operation Teddy Bear",
+    category: "medical",
+    description: "Help fund a revolutionary procedure that gives teddy bears to children in hospitals. Every cuddle counts!"
+  )
+end
+
+# Check and create an animal campaign
+unless Campaign.exists?(category: :animal)
+  Campaign.create(
+    name: "Penguins' Pool Party",
+    category: "animal",
+    description: "Support our Antarctic friends. We're building a luxury pool for penguins who prefer a splash of style in their swim!"
+  )
+end
+
+# Check and create a political campaign
+unless Campaign.exists?(category: :political)
+  Campaign.create(
+    name: "Ducks for Mayor",
+    category: "political",
+    description: "Vote for the ducks! Our feathered candidates promise more ponds in parks. It's time for a quack-tastic future."
+  )
+end
