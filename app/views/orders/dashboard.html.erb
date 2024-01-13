@@ -1,5 +1,13 @@
 <h1 class="text-4xl mb-8 basis-full">Rails sales dashboard</h1>
 
+<div class="flex gap-x-3 text-sm text-gray-400 mb-8">
+  <span class="text-white font-semibold cursor-pointer">7 days</span>
+  <span class="cursor-pointer">14 days</span>
+  <span class="cursor-pointer">1 month</span>
+  <span class="cursor-pointer">6 months</span>
+  <span class="cursor-pointer">Last year</span>
+</div>
+
 <section class="basis-full mb-8">
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
     <div class="p-3 border rounded-xl border-gray-700">
@@ -23,13 +31,6 @@
 <section class="basis-full mb-8">
   <div class="p-3  w-full flex flex-col gap-y-3">
     <h2 class="text-white text-xl font-medium">Sales over time</h2>
-    <div class="flex gap-x-3 text-sm text-gray-400">
-      <span class="text-white font-semibold cursor-pointer">7D</span>
-      <span class="cursor-pointer">14D</span>
-      <span class="cursor-pointer">1M</span>
-      <span class="cursor-pointer">6M</span>
-      <span class="cursor-pointer">1Y</span>
-    </div>
     <div>
       <% fake_sales = (1..14).map { |i| [(Date.new(2023, 1, 1) + i - 1).to_s, (rand(1..10).to_f)] }.to_h %>
       <%= line_chart(fake_sales, prefix: '$', colors: ["rgb(8 145 178)"], zeros: true, precision: 3, points: false, library: { animation: {easing: 'easeOutQuad'} }) %>
