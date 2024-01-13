@@ -70,3 +70,4 @@ group :test do
 end
 
 gem "chartkick", "~> 5.0"
+gem "money-rails", "~> 1.12"
