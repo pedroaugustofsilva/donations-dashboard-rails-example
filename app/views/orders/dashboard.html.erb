@@ -20,9 +20,9 @@
   </div>
 </section>
 
-<section class="basis-full">
-  <div class="p-3 border rounded-xl border-gray-700 w-full flex flex-col gap-y-3">
-    <h2 class="text-xl">Sales over time</h2>
+<section class="basis-full mb-8">
+  <div class="p-3  w-full flex flex-col gap-y-3">
+    <h2 class="text-white text-xl font-medium">Sales over time</h2>
     <div class="flex gap-x-3 text-sm text-gray-400">
       <span class="text-white font-semibold cursor-pointer">7D</span>
       <span class="cursor-pointer">14D</span>
@@ -33,6 +33,42 @@
     <div>
       <% fake_sales = (1..14).map { |i| [(Date.new(2023, 1, 1) + i - 1).to_s, (rand(1..10).to_f)] }.to_h %>
       <%= line_chart(fake_sales, prefix: '$', colors: ["rgb(8 145 178)"], zeros: true, precision: 3, points: false, library: { animation: {easing: 'easeOutQuad'} }) %>
+    </div>
+  </div>
+</section>
+
+<section class="basis-full pb-5">
+  <div class="w-full">
+    <div class="relative shadow-md sm:rounded-lg overflow-hidden">
+      <div class="p-4 text-white text-xl font-medium">
+        Latest donations
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-4 py-3">ID</th>
+            <th scope="col" class="px-4 py-3">Donor</th>
+            <th scope="col" class="px-4 py-3">Campaign</th>
+            <th scope="col" class="px-4 py-3">Value</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="border-b dark:border-gray-700">
+            <th scope="row" class="px-4 py-3">1</th>
+            <td class="px-4 py-3">John Doe</td>
+            <td class="px-4 py-3">Hospital</td>
+            <td class="px-4 py-3">$2999</td>
+          </tr>
+          <tr class="border-b dark:border-gray-700">
+            <th scope="row" class="px-4 py-3">2</th>
+            <td class="px-4 py-3">Mary</td>
+            <td class="px-4 py-3">Social event</td>
+            <td class="px-4 py-3">$15</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>
