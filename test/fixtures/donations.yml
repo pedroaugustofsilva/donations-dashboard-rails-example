@@ -1,0 +1,5 @@
+john_doe_donation:
+  donor_name: "John Doe"
+  amount_cents: 5000 # $50.00
+  status: success
+  campaign: save_valentin
