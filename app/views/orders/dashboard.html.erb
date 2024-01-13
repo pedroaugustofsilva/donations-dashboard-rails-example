@@ -11,7 +11,7 @@
 <section class="basis-full mb-8">
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
     <div class="p-3 border rounded-xl border-gray-700">
-      <div class="font-semibold text-gray-300 text-sm">Sales</div>
+      <div class="font-semibold text-gray-300 text-sm">Total donations</div>
       <div class="font-semibold text-3xl text-white mb-5">510</div>
       <div class="text-white font-medium rounded bg-gradient-to-b from-gray-600 to-gray-800 text-xs p-1 inline">
         <span>-></span> 7.4%
@@ -19,7 +19,7 @@
     </div>
 
     <div class="p-3 border rounded-xl border-gray-700">
-      <div class="font-semibold text-gray-300 text-sm">Revenue</div>
+      <div class="font-semibold text-gray-300 text-sm">Total funds raised</div>
       <div class="font-semibold text-3xl text-white mb-5">510k</div>
       <div class="text-white font-medium rounded bg-gradient-to-b from-gray-600 to-gray-800 text-xs p-1 inline">
         <span>-></span> 0.8%
@@ -30,7 +30,7 @@
 
 <section class="basis-full mb-8">
   <div class="p-3  w-full flex flex-col gap-y-3">
-    <h2 class="text-white text-xl font-medium">Sales over time</h2>
+    <h2 class="text-white text-xl font-medium">Donations over time</h2>
     <div>
       <% fake_sales = (1..14).map { |i| [(Date.new(2023, 1, 1) + i - 1).to_s, (rand(1..10).to_f)] }.to_h %>
       <%= line_chart(fake_sales, prefix: '$', colors: ["rgb(8 145 178)"], zeros: true, precision: 3, points: false, library: { animation: {easing: 'easeOutQuad'} }) %>
