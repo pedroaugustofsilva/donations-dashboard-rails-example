@@ -19,7 +19,17 @@
   </head>
 
   <body class="bg-gray-900 text-gray-100">
-    <main class="container max-w-screen-md mx-auto mt-28 px-5 flex flex-wrap">
+    <header class="antialiased container max-w-screen-md mx-auto px-5 mt-5">
+      <nav class="rounded border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800 flex flex-wrap justify-between items-center">
+        <%= link_to 'Donations', root_path, class: 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white' %>
+
+        <div>
+          <%= link_to 'Dashboard', root_path %>
+          <%= link_to 'Campaigns', campaigns_path %>
+        </div>
+      </nav>
+    </header>
+    <main class="container max-w-screen-md mx-auto mt-8 px-5 flex flex-wrap">
       <%= yield %>
     </main>
   </body>
