@@ -9,7 +9,7 @@ class CampaignsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should show two campaigns" do
+  test "index should show two campaigns" do
     get campaigns_url
     assert_select "section div h5", 2
     assert_select "section div h5" do |elements|
