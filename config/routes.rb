@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :campaigns, only: %i[index] do
-    resources :donations, only: %i[new]
+    resources :donations, only: %i[new create]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

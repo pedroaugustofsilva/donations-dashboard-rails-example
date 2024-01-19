@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_01_13_135618) do
+ActiveRecord::Schema[7.2].define(version: 2024_01_18_102542) do
   create_table "campaigns", force: :cascade do |t|
     t.string "name", null: false
     t.string "category", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_01_13_135618) do
 
   create_table "donations", force: :cascade do |t|
     t.string "donor_name", null: false
-    t.integer "amount_cents", default: 0, null: false
+    t.integer "amount_cents", null: false
     t.string "amount_currency", default: "USD", null: false
     t.integer "campaign_id", null: false
     t.string "status", null: false

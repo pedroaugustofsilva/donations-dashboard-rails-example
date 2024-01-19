@@ -1,5 +1,5 @@
 class Donation < ApplicationRecord
-  enum :status, %w[success failed pending].index_by(&:to_sym)
+  enum :status, %w[success failed pending].index_by(&:to_sym), default: :pending
 
   validates :donor_name, presence: true
 
