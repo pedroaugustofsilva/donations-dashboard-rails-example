@@ -15,7 +15,10 @@ class DonationsController < ApplicationController
     end
   end
 
-  def dashboard; end
+  def dashboard
+    @total_donations = Donation.count
+    @total_funds_raised = Donation.sum(:amount_cents)
+  end
 
   private
 
